@@ -27,6 +27,8 @@ jobs:
       shell: bash
       
     - name: Run scrapers
+      env: 
+        TEST: ${{ secrets.TEST }}
       run: python HelloWorld.py > data.json
       
     - name: Commit and push if it changed
